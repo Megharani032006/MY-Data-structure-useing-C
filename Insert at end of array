@@ -1,7 +1,7 @@
 #include<stdio.h>
 #define CAP 100
 int main(){
-    int arr[]={2,5,8,9};
+    int arr[CAP]={2,5,8,9};
     int n=5;
     int x=5;
     if(n<CAP){
