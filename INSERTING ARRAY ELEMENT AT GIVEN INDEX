@@ -1,0 +1,29 @@
+//inserting array at given index
+#include<stdio.h>
+int main()
+{
+    printf("Name:Megharani\n");
+    printf("USN:1SV24CS076\n");
+    int arr[3]={1,2,3};
+    int n,i,value,pos=3;
+    n=5;
+    value=87;
+    for(i=n;i>pos;i--){
+        arr[i]=arr[i+1];
+    }
+    arr[pos]=value;
+    n++;
+    for(i=0;i<n;i++)
+    printf("arr[%d]=%d\n",i,arr[i]);
+    return 0;
+}
+Output
+Name:Megharani
+USN:1SV24CS076
+arr[0]=1
+arr[1]=2
+arr[2]=3
+arr[3]=-1873107664
+arr[4]=32766
+arr[5]=-1873107592
+
