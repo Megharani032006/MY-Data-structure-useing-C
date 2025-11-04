@@ -1,0 +1,39 @@
+3.Allocate an R x C matrix using a single malloc, input elements, and print its transpose. If non-square, allocate new memory.
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int R, C, i, j;
+    int *mat, *trans;
+    printf("Enter rows and columns: ");
+    scanf("%d %d", &R, &C);
+    // Allocate R x C matrix using single malloc
+    mat = (int *)malloc(R * C * sizeof(int));
+    printf("Enter elements of matrix:\n");
+    for (i = 0; i < R; i++)
+        for (j = 0; j < C; j++)
+            scanf("%d", (mat + i * C + j));
+printf("\nOriginal Matrix:\n");
+    for (i = 0; i < R; i++) {
+        for (j = 0; j < C; j++)
+            printf("%d ", *(mat + i * C + j));
+        printf("\n");
+    }
+   // If not square, allocate new memory for transpose
+    trans = (int *)malloc(C * R * sizeof(int));
+    // Compute transpose
+    for (i = 0; i < R; i++)
+        for (j = 0; j < C; j++)
+            *(trans + j * R + i) = *(mat + i * C + j);
+
+    printf("\nTranspose Matrix:\n");
+    for (i = 0; i < C; i++) {
+    for (i = 0; i < C; i++) {
+        for (j = 0; j < R; j++)
+            printf("%d ", *(trans + i * R + j));
+        printf("\n");
+    }
+    free(mat);
+    free(trans);
+}
+
+
