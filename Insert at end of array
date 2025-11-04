@@ -1,0 +1,20 @@
+#include<stdio.h>
+#define CAP 100
+int main(){
+    int arr[]={2,5,8,9};
+    int n=5;
+    int x=5;
+    if(n<CAP){
+        arr[n]=x;
+        n++;
+    }
+    else {
+    printf("array is full");
+    }
+    for(int i=0;i<n;i++){
+    printf("%d",arr[i]);
+    }
+
+}
+o/p
+258905
