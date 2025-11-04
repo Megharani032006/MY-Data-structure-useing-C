@@ -1,0 +1,27 @@
+//insert  ARRAY AT BEGGING
+
+#include<stdio.h>
+#define CAP 10
+int main(){
+    int arr[CAP]={2,5,8,9};
+    int n=3;
+    int x=-7;
+    if(n<CAP){
+        //SHIFT RIGHT
+        for(int i=n;i>0;i--)
+        {
+            arr[i]=arr[i-1];
+            
+        }
+            arr[0]=x;
+            n++;
+        }
+    else
+        {
+            printf("invalid ");
+        }
+        for(int i=0;i<n;i++)
+        {
+            printf("%d",arr[i]);
+        }
+}
