@@ -1,0 +1,25 @@
+2. Implement your own char* my_strdup(char *src) using malloc and pointer copying
+#include <stdio.h>
+#include <stdlib.h>
+char* my_strdup(char *src) {
+    char *dest;
+    int len = 0;
+    while (*(src + len) != '\0' )          // find length of src
+        len++;
+        dest = (char *)malloc((len + 1) * sizeof(char)); // allocate memory for new   string (+1 for '\0')                             
+    for (int i = 0; i <= len; i++)    // copy characters using pointers
+        *(dest + i) = *(src + i);
+    return dest;
+}int main() {
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", str);
+    char *copy = my_strdup(str);
+    printf("Copied string: %s\n", copy);
+    free(copy); // free allocated memory
+    return 0;
+}
+OUTPUT
+Enter a string: Hello
+Copied string: Hello
+
