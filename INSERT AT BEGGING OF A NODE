@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include <stdlib.h>
+struct Node{
+    int data;
+    struct Node* next;
+};
+struct Node*head=NULL;
+//inserting at beginning
+void insertbegin(int  value)
+{
+    struct Node* newNode=malloc(sizeof(struct Node));//→ allocates memory for a new node.
+    newNode->data=value;//→ stores the given value inside the new node.
+    newNode->next=head;//→ connects the new node to the previous first node.
+    head=newNode;//→ updates the head pointer to point to this new node.
+}
+void display(){
+struct Node* temp=head;
+while(temp!=NULL)//Prints each node’s data until it reaches the end (NULL).
+{ 
+    printf("%d->",temp->data);
+    temp=temp->next;
+}
+printf("NULL");
+}
+int main()
+{
+    insertbegin(23);
+    insertbegin(77);
+    insertbegin(88);
+    insertbegin(99);
+    display();
+    return 0;
+}
+
+99->88->77->23->NULL
+    
