@@ -1,0 +1,87 @@
+#include<stdio.h>
+#define max 5
+int stack[max];
+int top=-1;
+void push(int value)
+{
+    if(top==max-1){
+        
+    printf("stack is over flow\n");
+    }
+    else
+    {
+        stack[++top]=value;
+        printf("pushed element:%d\n",value);
+    }
+}
+void pop()
+{
+    if(top==-1)
+    {printf("stack is underflow\n");
+    }
+    else
+    {
+        printf("poped element:%d\n",stack[top]);
+        top--;
+    }
+}
+void peek()
+{
+    if(top==-1)
+    printf("stack is empty\n");
+    else
+    {
+        printf(" peek element :%d \n",stack[top]);
+    }
+}
+void display(){
+    if(top==-1)
+    printf("stack  is empty\n");
+    else
+    {
+        for(int i=top;i>=0;i--)
+        printf("stack display %d\n",stack[i]);
+        
+    }
+}
+int main()
+{
+    push(40);
+    push(20);
+    push(50);
+    push(90);
+    display();
+    pop();
+    pop();
+    peek();
+    display();
+    
+}
+
+
+
+pushed element:40
+pushed element:20
+pushed element:50
+pushed element:90
+stack display 90
+stack display 50
+stack display 20
+stack display 40
+poped element:90
+poped element:50
+ peek element :20 
+stack display 20
+stack display 40
+
+
+
+
+
+
+
+
+
+
+
+
